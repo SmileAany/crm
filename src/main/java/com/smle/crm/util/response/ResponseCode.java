@@ -9,7 +9,7 @@ package com.smle.crm.util.response;
  * @link
  */
 public class ResponseCode {
-    private interface ICode {
+    public interface ICode {
         int getCode();
 
         String getMessage();
@@ -30,7 +30,7 @@ public class ResponseCode {
 
             NOT_FOUND(404,"路由未找到"),
 
-            METHOD_NOT_ALLOWED (405,"请求方法不支持"),
+            METHOD_NOT_ALLOWED (405,"请求方式不支持"),
 
             TOO_MANY_REQUESTS(429,"接口频率限制"),
 

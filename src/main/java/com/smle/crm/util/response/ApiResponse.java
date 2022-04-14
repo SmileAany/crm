@@ -72,4 +72,9 @@ public class ApiResponse<T> {
     {
         return new ApiResponse<T>(data,code, message);
     }
+
+    public static <T> ApiResponse<T> error(ResponseCode.ICode code)
+    {
+        return new ApiResponse<T>(null,code.getCode(), code.getMessage());
+    }
 }

@@ -60,9 +60,9 @@ public class CrmWebMvcConfig implements WebMvcConfigurer {
                 SerializerFeature.PrettyFormat,
                 //输出map中value为null的数据
                 SerializerFeature.WriteMapNullValue,
-                //输出空list为[]，而不是null
+                //输出空list为[]而不是null
                 SerializerFeature.WriteNullListAsEmpty,
-                //输出空string为""，而不是null
+                //输出空string为""而不是null
                 SerializerFeature.WriteNullStringAsEmpty,
                 //对map进行排序
                 SerializerFeature.MapSortField,

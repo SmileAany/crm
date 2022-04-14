@@ -11,3 +11,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
     username: root
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static/**
