@@ -1,4 +1,4 @@
-package com.smle.crm;
+package com.smile.crm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

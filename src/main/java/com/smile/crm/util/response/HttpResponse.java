@@ -1,4 +1,4 @@
-package com.smle.crm.util.response;
+package com.smile.crm.util.response;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

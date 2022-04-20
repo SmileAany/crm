@@ -1,4 +1,4 @@
-package com.smle.crm.util.response;
+package com.smile.crm.util.response;
 
 /**
  * @author smile

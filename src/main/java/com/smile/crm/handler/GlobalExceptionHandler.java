@@ -1,7 +1,7 @@
-package com.smle.crm.handler;
+package com.smile.crm.handler;
 
-import com.smle.crm.util.response.ApiResponse;
-import com.smle.crm.util.response.ResponseCode;
+import com.smile.crm.util.response.ApiResponse;
+import com.smile.crm.util.response.ResponseCode;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -56,8 +56,6 @@ public class GlobalExceptionHandler {
      **/
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ApiResponse<String> MethodArgumentNotValidException(MethodArgumentNotValidException exception) {
-        exception.printStackTrace();
-
         return ApiResponse.error(ResponseCode.Code.HttpCode.VALIDATE_FAILED);
     }
 

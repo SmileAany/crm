@@ -1,4 +1,4 @@
-package com.smle.crm.config;
+package com.smile.crm.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
@@ -8,13 +8,13 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author smile
- * @Notes
+ * @Notes 配置中心
  * @date 2022/4/13
  * @time 12:02 PM
  * @example
@@ -53,7 +53,7 @@ public class CrmWebMvcConfig implements WebMvcConfigurer {
         FastJsonConfig config = new FastJsonConfig();
 
         config.setDateFormat("yyyy-MM-dd");
-        config.setCharset(Charset.forName("UTF-8"));
+        config.setCharset(StandardCharsets.UTF_8);
 
         config.setSerializerFeatures(
                 //json格式化
