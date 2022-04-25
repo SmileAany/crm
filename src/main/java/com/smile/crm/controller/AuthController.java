@@ -1,14 +1,13 @@
 package com.smile.crm.controller;
 
-import com.smile.crm.entity.User;
-import com.smile.crm.mapper.UserMapper;
 import com.smile.crm.model.service.IUserService;
+import com.smile.crm.request.AccountLoginRequest;
+import com.smile.crm.request.EmailLoginRequest;
+import com.smile.crm.service.UserService;
 import com.smile.crm.util.response.ApiResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author smile
@@ -20,13 +19,47 @@ import java.util.List;
  */
 @RestController
 public class AuthController {
+    /***
+     * 业务service
+     **/
+    @Resource
+    private UserService userService;
+
+    /***
+     * 数据service
+     **/
     @Resource
     private IUserService iUserService;
 
-    @GetMapping("/account/login")
-    public ApiResponse<List> AccountLogin() {
-        List<User> users = iUserService.getBaseMapper().selectList(null);
+    /***
+     * @Notes email登陆
+     * @param emailLoginRequest  email
+     * @return com.smile.crm.util.response.ApiResponse
+     * @author smile
+     * @date 2022/4/22
+     * @time 12:09 PM
+     **/
+    @PostMapping("/email/login")
+    public ApiResponse emailLogin(@RequestBody EmailLoginRequest emailLoginRequest) {
+        return userService.emailLogin(emailLoginRequest.getEmail());
+    }
 
-        return ApiResponse.success("success",200,users);
+    /***
+     * @Notes 账号登陆
+     * @param accountLoginRequest username,password
+     * @return com.smile.crm.util.response.ApiResponse
+     * @author smile
+     * @date 2022/4/22
+     * @time 12:09 PM
+     **/
+    @PostMapping("/account/login")
+    public ApiResponse accountLogin(@RequestBody AccountLoginRequest accountLoginRequest) {
+        return userService.accountLogin(accountLoginRequest.getUsername()
+                ,accountLoginRequest.getPassword());
+    }
+
+    @GetMapping("/user/{userId}")
+    public String user(@PathVariable String userId) {
+        return "smile";
     }
 }

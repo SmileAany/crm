@@ -1,7 +1,6 @@
 server:
   port: 8002
   servlet:
-    context-path: /api
     encoding:
       force-response: true
 
@@ -13,7 +12,9 @@ spring:
     username: root
   mvc:
     throw-exception-if-no-handler-found: true
-    static-path-pattern: /static/**
+  web:
+    resources:
+      add-mappings: false
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
@@ -21,3 +22,9 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
+
+jwt:
+  key: 6TvUubi2AD7wMFFfeN84pTjcxngz8sqraCLliknFBcn32y99cA1q7WDomJmX1BMF
+  expire: 360000
+  header: Authorization
+  prefix: Bearer

@@ -52,7 +52,7 @@ public class CrmWebMvcConfig implements WebMvcConfigurer {
 
         FastJsonConfig config = new FastJsonConfig();
 
-        config.setDateFormat("yyyy-MM-dd");
+        config.setDateFormat("yyyy-MM-dd HH:mm:ss");
         config.setCharset(StandardCharsets.UTF_8);
 
         config.setSerializerFeatures(
@@ -69,6 +69,7 @@ public class CrmWebMvcConfig implements WebMvcConfigurer {
                 //禁用循环引用
                 SerializerFeature.DisableCircularReferenceDetect
         );
+
         converter.setFastJsonConfig(config);
         converters.add(converter);
     }
