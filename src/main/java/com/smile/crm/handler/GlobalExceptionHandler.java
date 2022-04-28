@@ -2,8 +2,8 @@ package com.smile.crm.handler;
 
 import com.smile.crm.util.response.ApiResponse;
 import com.smile.crm.util.response.ResponseCode;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//import org.springframework.security.authentication.BadCredentialsException;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -24,11 +24,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     public ApiResponse<String> handleException(Exception e) throws Exception {
-        if (e instanceof UsernameNotFoundException) {
-            throw(e);
-        } else if (e instanceof BadCredentialsException) {
-            throw(e);
-        }
+//        if (e instanceof UsernameNotFoundException) {
+//            throw(e);
+//        } else if (e instanceof BadCredentialsException) {
+//            throw(e);
+//        }
 
         e.printStackTrace();
 

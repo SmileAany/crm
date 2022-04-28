@@ -22,7 +22,7 @@ public class CorsConfig implements WebMvcConfigurer {
                 // 是否允许cookie
                 .allowCredentials(true)
                 // 设置允许的请求方式
-                .allowedMethods("GET", "POST", "DELETE", "PUT")
+                .allowedMethods("GET", "POST", "DELETE", "PUT","OPTIONS","HEAD")
                 // 设置允许的header属性
                 .allowedHeaders("*")
                 // 跨域允许时间
